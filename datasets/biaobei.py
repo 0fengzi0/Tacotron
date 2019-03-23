@@ -29,7 +29,7 @@ def build_from_path(in_dir, out_dir, num_workers=1, tqdm=lambda x: x):
       for line in f:
           parts = line.strip().split('|')
           pinyin = parts[1]
-          wav_file = os.path.join(in_dir, 'wave', '%s.wav' % parts[0])
+          wav_file = os.path.join(in_dir, 'Wave', '%s.wav' % parts[0])
           task = partial(_process_utterance, out_dir, index, wav_file, pinyin)
           futures.append(executor.submit(task))
           index += 1
