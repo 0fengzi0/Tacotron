@@ -49,7 +49,7 @@ Pull requests are welcome!
 
 2. **Run the demo server**:
    ```
-   python3 demo_server.py --checkpoint /tmp/tacotron-20170720/model.ckpt
+   python demo_server.py --checkpoint /tmp/tacotron-20170720/model.ckpt
    ```
 
 3. **Point your browser at localhost:9000**
@@ -96,13 +96,13 @@ Pull requests are welcome!
 
 3. **Preprocess the data**
    ```
-   python3 preprocess.py --dataset ljspeech
+   python preprocess.py --dataset ljspeech
    ```
      * Use `--dataset blizzard` for Blizzard data
 
 4. **Train a model**
    ```
-   python3 train.py
+   python train.py
    ```
 
    Tunable hyperparameters are found in [hparams.py](hparams.py). You can adjust these at the command
@@ -122,13 +122,13 @@ Pull requests are welcome!
 
 6. **Synthesize from a checkpoint**
    ```
-   python3 demo_server.py --checkpoint ~/tacotron/logs-tacotron/model.ckpt-185000
+   python demo_server.py --checkpoint ./logs-tacotron/model.ckpt-185000
    ```
    Replace "185000" with the checkpoint number that you want to use, then open a browser
    to `localhost:9000` and type what you want to speak. Alternately, you can
    run [eval.py](eval.py) at the command line:
    ```
-   python3 eval.py --checkpoint ~/tacotron/logs-tacotron/model.ckpt-185000
+   python eval.py --checkpoint ./logs-tacotron/model.ckpt-185000
    ```
    If you set the `--hparams` flag when training, set the same value here.
 
